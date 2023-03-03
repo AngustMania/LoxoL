@@ -1,26 +1,26 @@
 class Person:
   height = 170
   name = "Name"
-  is_impostor = False
   
   def __init__(self, name, height):
     self.name = name
     self.height = height
+  
+  def walk_out(self, pet):
+    pet.wants_pee = False
 
-class hedgehog:
-  color = "blue"
-    
+class Dog:
+  color = "white"
+  wants_pee = True
+  
   def __init__(self, name):
     self.name = name
 
-  def play(self, human):
-    human.is_impostor = True
-
 me = Person("I", 15)
-sega = hedgehog("Sonic")
+pet = Dog("Bob")
 
-print(me.is_impostor)
-sega.play(me)
-print("Зрадник -", me.is_impostor)
+print(pet.wants_pee)
+me.walk_out(pet)
+print("Собака хоче пі -", pet.wants_pee)
 
   
